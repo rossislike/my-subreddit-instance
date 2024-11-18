@@ -9,17 +9,15 @@ phases:
       - yum install nginx -y
       - yum install dotnet-sdk-8.0 -y
       - yum install aspnetcore-runtime-8.0 -y
-      - echo "dependencies installed"
   pre_build:
     commands:
-      - echo "we are in the pre build phase"
-      - dotnet publish -o/var/www/my-subreddit-instance/
+
   build:
     commands:
-      - echo "we are in the build phase"
+      - dotnet publish -o /var/www/my-subreddit-instance/
+
   post_build:
     commands:
-      - echo "we are in the post build phase"
 # artifacts:
 #   files:
 #     - "**/*"
