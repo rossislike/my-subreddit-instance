@@ -5,10 +5,15 @@ phases:
     runtime-version:
       dotnet: 8.0
     commands:
-      - echo "installing something"
+      - yum update -y
+      - yum install nginx -7
+      - yum install dotnet-sdk-8.0 -y
+      - yum install aspnetcore-runtime-8.0 -y
+      - echo "dependencies installed"
   pre_build:
     commands:
       - echo "we are in the pre build phase"
+      - dotnet publish -o/var/www/my-subreddit-instance/
   build:
     commands:
       - echo "we are in the build phase"

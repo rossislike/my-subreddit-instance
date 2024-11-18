@@ -1,0 +1,6 @@
+@my_subreddit_instance_HostAddress = http://localhost:5261
+
+GET {{my_subreddit_instance_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
