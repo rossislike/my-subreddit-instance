@@ -6,7 +6,7 @@ phases:
       dotnet: 8.0
     commands:
       - yum update -y
-      - yum install nginx -7
+      - yum install nginx -y
       - yum install dotnet-sdk-8.0 -y
       - yum install aspnetcore-runtime-8.0 -y
       - echo "dependencies installed"
