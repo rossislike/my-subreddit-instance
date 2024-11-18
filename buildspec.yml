@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-version:
+      dotnet: 8.0
+    commands:
+      - echo "installing something"
+  pre_build:
+    commands:
+      - echo "we are in the pre build phase"
+  build:
+    commands:
+      - echo "we are in the build phase"
+  post_build:
+    commands:
+      - echo "we are in the post build phase"
+# artifacts:
+#   files:
+#     - "**/*"
