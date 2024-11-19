@@ -2,13 +2,15 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      dotnet: 8.0
     commands:
       - yum update -y
       - yum install nginx -y
-      - yum install dotnet-sdk-8.0 -y
   pre_build:
     commands:
       - dotnet --version
+      - rpm -qa | grep dotnet
   build:
     commands:
       - dotnet publish -o /var/www/my-subreddit-instance
