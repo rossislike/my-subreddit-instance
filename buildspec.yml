@@ -6,18 +6,20 @@ phases:
       dotnet: 8.0
     commands:
       - yum update -y
-      - yum install nginx -y
+      # - yum install nginx -y
   pre_build:
     commands:
       - dotnet --version
   build:
     commands:
       - dotnet publish -o /var/www/my-subreddit-instance
-      - ls -la /var/www/my-subreddit-instance
 
   post_build:
     commands:
+      - ls -la /var/www/my-subreddit-instance
 
 artifacts:
   files:
     - "/var/www/my-subreddit-instance/*"
+    - "my-subreddit-instance.conf"
+    - "my-subreddit-instance.service"
