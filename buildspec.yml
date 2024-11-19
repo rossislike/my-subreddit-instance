@@ -10,7 +10,6 @@ phases:
   pre_build:
     commands:
       - dotnet --version
-      - rpm -qa | grep dotnet
   build:
     commands:
       - dotnet publish -o /var/www/my-subreddit-instance
