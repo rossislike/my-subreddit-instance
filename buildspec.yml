@@ -13,9 +13,11 @@ phases:
   build:
     commands:
       - dotnet publish -o /var/www/my-subreddit-instance
+      - ls -la /var/www/my-subreddit-instance
 
   post_build:
     commands:
-# artifacts:
-#   files:
-#     - "**/*"
+
+artifacts:
+  files:
+    - "/var/www/my-subreddit-instance/*"
