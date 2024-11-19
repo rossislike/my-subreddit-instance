@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-version:
-      dotnet: 8.0
+      dotnet: latest
     commands:
       - yum update -y
       - yum install nginx -y
