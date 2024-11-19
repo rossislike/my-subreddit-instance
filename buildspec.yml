@@ -8,7 +8,6 @@ phases:
       - yum update -y
       - yum install nginx -y
       - yum install dotnet-sdk-8.0 -y
-      - yum install aspnetcore-runtime-8.0 -y
   pre_build:
     commands:
 
