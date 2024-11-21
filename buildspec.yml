@@ -19,7 +19,7 @@ phases:
   post_build:
     commands:
       - ls -la /var/www/my-subreddit-instance
-      - ip -r my-subreddit-instance.zip appspec.yml /var/www/my-subreddit-instance/* my-subreddit-instance.conf my-subreddit-instance.service scripts/
+      - zip -r my-subreddit-instance.zip appspec.yml /var/www/my-subreddit-instance/* my-subreddit-instance.conf my-subreddit-instance.service scripts/
 
 artifacts:
   files:
