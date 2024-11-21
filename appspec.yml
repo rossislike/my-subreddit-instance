@@ -5,6 +5,14 @@ files:
     destination: /etc/nginx/conf.d/
   - source: /my-subreddit-instance.service
     destination: /etc/systemd/system/
+permissions:
+  - object: scripts
+    pattern: "**"
+    owner: root
+    group: root
+    mode: 777
+    type:
+      - file
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
