@@ -1,8 +1,7 @@
 #!/bin/bash
 # dnf install -y aspnetcore-runtime-8.0
 # yum install nginx -y
-ls
-mv my-subreddit-instance.conf /etc/nginx/conf.d/my-subreddit-instance.conf
+echo "ls /etc/nginx/conf.d/"
 ls /etc/nginx/conf.d/
-mv my-subreddit-instance.service /etc/systemd/system/my-subreddit-instance.service
+echo "ls /etc/systemd/system/"
 ls /etc/systemd/system/
