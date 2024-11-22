@@ -1,4 +1,8 @@
 #!/bin/bash
-dnf install -y aspnetcore-runtime-8.0
-yum install nginx -y
-export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+# dnf install -y aspnetcore-runtime-8.0
+# yum install nginx -y
+ls
+mv my-subreddit-instance.conf /etc/nginx/conf.d/my-subreddit-instance.conf
+ls /etc/nginx/conf.d/
+mv my-subreddit-instance.service /etc/systemd/system/my-subreddit-instance.service
+ls /etc/systemd/system/

@@ -1,4 +1,6 @@
 #!/bin/bash
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+systemctl daemon-reload
 systemctl start nginx
 systemctl enable nginx
 systemctl start my-subreddit-instance.service
