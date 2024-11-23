@@ -2,15 +2,15 @@
 # dnf install -y aspnetcore-runtime-8.0
 # yum install nginx -y
 # export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
-
+pwd
 mkdir -p /var/www/my-subreddit-instance
 mkdir -p /var/www/my-subreddit-instance/logs
-mkdir -p /etc/nginx/conf.d
+mkdir -p /etc/systemd/system/
 
 # Set permissions
 chown root:root /var/www/my-subreddit-instance
 chmod 755 /var/www/my-subreddit-instance
 chown root:root /var/www/my-subreddit-instance/logs
 chmod 755 /var/www/my-subreddit-instance/logs
-chown root:root /etc/nginx/conf.d
-chmod 755 /etc/nginx/conf.d
+chown root:root /etc/systemd/system
+chmod 755 /etc/systemd/system
