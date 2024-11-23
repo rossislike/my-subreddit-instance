@@ -5,8 +5,8 @@ files:
     destination: /etc/nginx/conf.d/
   - source: /my-subreddit-instance.service
     destination: /etc/systemd/system/
-  - source: /var/www/my-subreddit-instance
-    destination: /var/www/my-subreddit-instance
+  - source: /var/www/my-subreddit-instance/*
+    destination: /var/www/my-subreddit-instance/
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
