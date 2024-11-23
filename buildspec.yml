@@ -14,12 +14,12 @@ phases:
 
   build:
     commands:
-      - dotnet publish -o /var/www/my-subreddit-instance
+      - dotnet publish src/my-subreddit-instance.csproj -o build
 
   post_build:
     commands:
       - ls -la /var/www/my-subreddit-instance
-      - zip -r my-subreddit-instance.zip appspec.yml /var/www/my-subreddit-instance/* my-subreddit-instance.conf my-subreddit-instance.service scripts/
+      - zip -r my-subreddit-instance.zip appspec.yml my-subreddit-instance.conf my-subreddit-instance.service scripts/ build/
 
 artifacts:
   files:

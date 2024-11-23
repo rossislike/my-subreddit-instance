@@ -4,9 +4,4 @@
 mv my-subreddit-instance.conf /etc/nginx/conf.d/
 mv my-subreddit-instance.service /etc/systemd/system/
 
-echo "ls -la /etc/nginx/conf.d/"
-ls -la /etc/nginx/conf.d/
-echo "ls -la /etc/systemd/system/"
-ls -la /etc/systemd/system/
-echo "ls -la /var/www/"
-ls -la /var/www/
+mv /var/www/my-subreddit-instance/*
