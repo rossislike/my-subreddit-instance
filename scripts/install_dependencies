@@ -3,6 +3,14 @@
 # yum install nginx -y
 # export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
 
-cp /my-subreddit-instance.conf /etc/nginx/conf.d/
-cp /my-subreddit-instance.service /etc/systemd/system/
-cp /build/my-subreddit-instance/* /var/www/my-subreddit-instance/
+mkdir -p /var/www/my-subreddit-instance
+mkdir -p /var/www/my-subreddit-instance/logs
+mkdir -p /etc/nginx/conf.d
+
+# Set permissions
+chown root:root /var/www/my-subreddit-instance
+chmod 755 /var/www/my-subreddit-instance
+chown root:root /var/www/my-subreddit-instance/logs
+chmod 755 /var/www/my-subreddit-instance/logs
+chown root:root /etc/nginx/conf.d
+chmod 755 /etc/nginx/conf.d
