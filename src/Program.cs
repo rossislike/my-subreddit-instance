@@ -1,6 +1,5 @@
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +35,7 @@ string CLIENT_SECRET = Environment.GetEnvironmentVariable("CLIENT_SECRET") ?? ""
 string REDIRECT_URI = Environment.GetEnvironmentVariable("REDIRECT_URI") ?? "";
 string USER_AGENT = Environment.GetEnvironmentVariable("USER_AGENT") ?? "";
 string WEB_HOST_URL = Environment.GetEnvironmentVariable("WEB_HOST_URL") ?? "";
+string ALB_DNS = Environment.GetEnvironmentVariable("ALB_DNS") ?? "";
 
 builder.WebHost.UseUrls(WEB_HOST_URL);
 var stateManager = app.Services.GetRequiredService<StateManager>();
@@ -90,7 +90,7 @@ app.MapGet("/reddit_callback", async (HttpContext context, IHttpClientFactory ht
         var username = await GetUsernameAsync(httpClientFactory, accessToken);
 
         // await context.Response.WriteAsync($"Your Reddit username is: {username}");
-        context.Response.Redirect("http://localhost:3000");
+        context.Response.Redirect(ALB_DNS);
     }
     catch (Exception ex)
     {
