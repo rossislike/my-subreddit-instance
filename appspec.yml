@@ -6,8 +6,9 @@ files:
     destination: /etc/nginx/conf.d/
   - source: /my-subreddit-instance.service
     destination: /etc/systemd/system/
-  - source: /build/my-subreddit-instance/*
+  - source: /build
     destination: /var/www/my-subreddit-instance/
+    pattern: "**"
 
 hooks:
   ApplicationStop:
