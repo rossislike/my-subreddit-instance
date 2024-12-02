@@ -2,12 +2,12 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
+  - source: /client/build/
     destination: /staging/my-subreddit-instance-fe
     pattern: "**"
 
 hooks:
   AfterInstall:
-    - location: scripts/after_install
+    - location: client/scripts/after_install
       timeout: 300
       runas: root

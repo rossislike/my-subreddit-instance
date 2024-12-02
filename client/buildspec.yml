@@ -20,15 +20,10 @@ phases:
 
   post_build:
     commands:
-      - cd client
-      - cp appspec.yml build/appspec.yml
-      - cp -r scripts build/scripts
-      - cd client/build
-      - zip -r my-subreddit-instanct-fe.zip .
-      - mv my-subreddit-instanct-fe.zip ../../my-subreddit-instanct-fe.zip
-      - cd ../../
+      - cp client appspec.yml ./
+      - zip -r my-subreddit-instance-fe.zip client/build/ appspec.yml client/scripts/
 
 artifacts:
   files:
     # - "my-subreddit-instance.zip"
-    - "my-subreddit-instanct-fe.zip"
+    - "my-subreddit-instance-fe.zip"
