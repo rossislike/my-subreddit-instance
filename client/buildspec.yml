@@ -20,7 +20,7 @@ phases:
 
   post_build:
     commands:
-      - cp client appspec.yml ./
+      - cp client/appspec.yml .
       - zip -r my-subreddit-instance-fe.zip client/build/ appspec.yml client/scripts/
 
 artifacts:
