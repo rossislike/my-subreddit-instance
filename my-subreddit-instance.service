@@ -17,6 +17,7 @@ Environment=CLIENT_SECRET=aL4M-byXiRGWBNQAiUylEAgFxG_kuw
 Environment=REDIRECT_URI=http://127.0.0.1:65010/reddit_callback
 Environment=USER_AGENT=SubrebbitJack by Alternative_Ruin360
 Environment=WEB_HOST_URL=http://127.0.0.1:65010
+Environment=ALB_DNS=http://Reddit-LB-104881215.us-east-1.elb.amazonaws.com"
 
 [Install]
 WantedBy=multi-user.target

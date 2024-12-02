@@ -6,7 +6,7 @@ phases:
       dotnet: 8.0
     commands:
       - yum update -y
-      # - yum install nginx -y
+      # - yum install -y nodejs
 
   pre_build:
     commands:
@@ -15,12 +15,20 @@ phases:
   build:
     commands:
       - dotnet publish src/my-subreddit-instance.csproj -o build
+      # - npm i --prefix client
+      # - npm run build --prefix client
 
   post_build:
     commands:
       - ls -la build
       - zip -r my-subreddit-instance.zip appspec.yml my-subreddit-instance.conf my-subreddit-instance.service scripts/ build/
+      # - cd client
+      # - cp appspec.yml build/appspec.yml
+      # - cp scripts build/scripts
+      # - cd client/build
+      # - zip -r my-subreddit-instanct-fe.zip .
 
 artifacts:
   files:
     - "my-subreddit-instance.zip"
+    # - "my-subreddit-instanct-fe.zip"

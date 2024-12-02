@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /staging/my-subreddit-instance-fe
+aws s3 rm s3://rumo-reddit-site/ --recursive 
+aws s3 cp . s3://rumo-reddit-site/ --recursive 
