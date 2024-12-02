@@ -22,7 +22,7 @@ phases:
     commands:
       - cd client
       - cp appspec.yml build/appspec.yml
-      - cp scripts build/scripts
+      - cp -r scripts build/scripts
       - cd client/build
       - zip -r my-subreddit-instanct-fe.zip .
       - mv my-subreddit-instanct-fe.zip ../../my-subreddit-instanct-fe.zip
