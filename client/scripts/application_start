@@ -1,0 +1,7 @@
+#!/bin/bash
+
+systemctl daemon-reload
+systemctl start nginx
+systemctl enable nginx
+systemctl start my-subreddit-instance.service
+systemctl enable my-subreddit-instance.service

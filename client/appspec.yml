@@ -7,7 +7,19 @@ files:
     pattern: "**"
 
 hooks:
+  ApplicationStop:
+    - location: client/scripts/application_stop
+      timeout: 300
+      runas: root
+  BeforeInstall:
+    - location: client/scripts/before_install
+      timeout: 300
+      runas: root
   AfterInstall:
     - location: client/scripts/after_install
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: client/scripts/application_start
       timeout: 300
       runas: root
