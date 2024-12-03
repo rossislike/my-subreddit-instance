@@ -10,7 +10,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactPolicy", policy => 
     {
-        policy.AllowAnyOrigin()
+        policy.WithOrigins(
+            "http://reddit-lb-104881215.us-east-1.elb.amazonaws.com",
+            "http://localhost:65010"
+        )
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
