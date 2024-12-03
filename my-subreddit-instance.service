@@ -14,10 +14,10 @@ Environment=ASPNETCORE_ENVIRONMENT=Production
 Environment=ASPNETCORE_URLS=http://localhost:65010
 Environment=CLIENT_ID=Qk_euOdX0E7h4XmQXRWwhA
 Environment=CLIENT_SECRET=aL4M-byXiRGWBNQAiUylEAgFxG_kuw
-Environment=REDIRECT_URI=http://127.0.0.1:65010/reddit_callback
-Environment=USER_AGENT=SubrebbitJack by Alternative_Ruin360
+Environment=REDIRECT_URI=http://reddit-lb-104881215.us-east-1.elb.amazonaws.com/api/auth/reddit_callback
+Environment=USER_AGENT="SubrebbitJack by Alternative_Ruin360"
 Environment=WEB_HOST_URL=http://127.0.0.1:65010
-Environment=ALB_DNS=http://Reddit-LB-104881215.us-east-1.elb.amazonaws.com"
+Environment=ALB_DNS=http://rumo-reddit-site.s3-website-us-east-1.amazonaws.com
 
 [Install]
 WantedBy=multi-user.target

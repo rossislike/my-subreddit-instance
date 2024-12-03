@@ -21,7 +21,8 @@
         "CLIENT_SECRET": "aL4M-byXiRGWBNQAiUylEAgFxG_kuw",
         "REDIRECT_URI": "http://127.0.0.1:65010/reddit_callback",
         "USER_AGENT": "SubrebbitJack by Alternative_Ruin360",
-        "WEB_HOST_URL": "http://127.0.0.1:65010"
+        "WEB_HOST_URL": "http://127.0.0.1:65010",
+        "ALB_DNS": "http://Reddit-LB-104881215.us-east-1.elb.amazonaws.com"
       }
     },
     "https": {

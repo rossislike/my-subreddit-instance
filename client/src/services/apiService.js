@@ -16,7 +16,10 @@ export const fetchData = async () => {
 export const fetchRedditAuth = async () => {
   try {
     // const response = await axios.get(`${API_BASE_URL}/test`)
-    const response = await axios.get(`${process.env.REACT_APP_BASE_URL}`)
+    // const response = await axios.get(`${process.env.REACT_APP_BASE_URL}`)
+    const response = await axios.get(
+      `${process.env.REACT_APP_API_URL}/auth/login`
+    )
     return response.data
   } catch (err) {
     console.error(err)
