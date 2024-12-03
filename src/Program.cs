@@ -29,8 +29,8 @@ app.UseCors("ReactPolicy");
 app.UseHttpsRedirection();
 app.MapControllers();
 
-string WEB_HOST_URL = Environment.GetEnvironmentVariable("WEB_HOST_URL") ?? "";
-builder.WebHost.UseUrls(WEB_HOST_URL);
+string ASPNETCORE_URLS = Environment.GetEnvironmentVariable("ASPNETCORE_URLS") ?? "";
+builder.WebHost.UseUrls(ASPNETCORE_URLS);
 
 
 app.Run();

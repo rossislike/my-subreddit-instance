@@ -3,8 +3,8 @@ Description=ASP.NET Core Web App
 After=network.target
 
 [Service]
-WorkingDirectory=/var/www/my-subreddit-instance
-ExecStart=/usr/bin/dotnet /var/www/my-subreddit-instance/my-subreddit-instance.dll
+WorkingDirectory=/usr/local/bin/my-subreddit-instance
+ExecStart=/usr/bin/dotnet /usr/local/bin/my-subreddit-instance/my-subreddit-instance.dll
 Restart=always
 RestartSec=10
 KillSignal=SIGINT
@@ -14,10 +14,9 @@ Environment=ASPNETCORE_ENVIRONMENT=Production
 Environment=ASPNETCORE_URLS=http://localhost:65010
 Environment=CLIENT_ID=Qk_euOdX0E7h4XmQXRWwhA
 Environment=CLIENT_SECRET=aL4M-byXiRGWBNQAiUylEAgFxG_kuw
-Environment=REDIRECT_URI=http://reddit-lb-104881215.us-east-1.elb.amazonaws.com/api/auth/reddit_callback
+Environment=REDIRECT_URI=http://localhost:65010/api/auth/reddit_callback
 Environment=USER_AGENT="SubrebbitJack by Alternative_Ruin360"
-Environment=WEB_HOST_URL=http://127.0.0.1:65010
-Environment=SITE_URL=http://rumo-reddit-site.s3-website-us-east-1.amazonaws.com
+Environment=SITE_URL=http://localhost:80
 
 [Install]
 WantedBy=multi-user.target

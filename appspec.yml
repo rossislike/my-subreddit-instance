@@ -2,12 +2,12 @@ version: 0.0
 os: linux
 
 files:
-  - source: /my-subreddit-instance.conf
-    destination: /etc/nginx/conf.d/
+  # - source: /my-subreddit-instance.conf
+  #   destination: /etc/nginx/conf.d/
   - source: /my-subreddit-instance.service
     destination: /etc/systemd/system/
   - source: /build
-    destination: /var/www/my-subreddit-instance/
+    destination: /usr/local/bin/my-subreddit-instance/
     pattern: "**"
 
 hooks:

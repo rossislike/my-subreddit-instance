@@ -17,12 +17,12 @@
       "applicationUrl": "http://localhost:5242",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:65010",
         "CLIENT_ID": "Qk_euOdX0E7h4XmQXRWwhA",
         "CLIENT_SECRET": "aL4M-byXiRGWBNQAiUylEAgFxG_kuw",
         "REDIRECT_URI": "http://127.0.0.1:65010/reddit_callback",
         "USER_AGENT": "SubrebbitJack by Alternative_Ruin360",
-        "WEB_HOST_URL": "http://127.0.0.1:65010",
-        "ALB_DNS": "http://Reddit-LB-104881215.us-east-1.elb.amazonaws.com"
+        "SITE_URL": "http://localhost:65010"
       }
     },
     "https": {
