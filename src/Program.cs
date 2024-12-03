@@ -8,7 +8,7 @@ builder.Services.AddSingleton<IStatsRepository, StatsRepository>();
 builder.Services.AddControllers();
 builder.Services.AddCors(options => 
 {
-    options.AddPolicy("ReactPolicy", policy => 
+    options.AddDefaultPolicy(, policy => 
     {
         policy.AllowAnyOrigin()
             .AllowAnyMethod()
@@ -23,7 +23,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("ReactPolicy");
+app.UseCors();
 app.UseHttpsRedirection();
 app.MapControllers();
 
