@@ -11,8 +11,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("ReactPolicy", policy => 
     {
         policy.WithOrigins(
-            "http://reddit-lb-104881215.us-east-1.elb.amazonaws.com",
-            "http://localhost:65010"
+            "http://rumo-reddit-site.s3-website-us-east-1.amazonaws.com"
         )
             .AllowAnyMethod()
             .AllowAnyHeader();
