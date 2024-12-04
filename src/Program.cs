@@ -5,16 +5,18 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
 builder.Services.AddSingleton<StateManager>();
 builder.Services.AddSingleton<IStatsRepository, StatsRepository>();
-builder.Services.AddControllers();
 builder.Services.AddCors(options => 
 {
     options.AddPolicy("ReactPolicy", policy => 
     {
         policy.AllowAnyOrigin()
             .AllowAnyMethod()
+            .SetIsOriginAllowed((host) => true)
             .AllowAnyHeader();
     });
 });
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
