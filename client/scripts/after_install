@@ -5,3 +5,4 @@
 # aws s3 cp . s3://rumo-reddit-site/ --recursive 
 
 echo "After install"
+chmod 755 /usr/share/nginx/html/index.html

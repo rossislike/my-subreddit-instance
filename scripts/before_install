@@ -1,3 +1,4 @@
 #!/bin/bash
 
 echo "before install"
+yum install aspnetcore-runtime-8.0 -y
