@@ -10,9 +10,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("ReactPolicy", policy => 
     {
-        policy.WithOrigins(
-            "http://rumo-reddit-site.s3-website-us-east-1.amazonaws.com"
-        )
+        policy.AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader();
     });
