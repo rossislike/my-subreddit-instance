@@ -1,13 +1,4 @@
 #!/bin/bash
 
-isExistApp = `pgrep nginx`
-if [[ -n  $isExistApp ]]; then
-    # service nginx stop    
-    systemctl stop nginx    
-fi
-
-isExistApp = `pgrep my-subreddit-instance.service`
-if [[ -n  $isExistApp ]]; then
-    # service nginx stop    
-    systemctl stop my-subreddit-instance.service    
-fi
+systemctl stop nginx    
+systemctl stop my-subreddit-instance.service    
