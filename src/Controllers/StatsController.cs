@@ -30,6 +30,9 @@ public class StatsController : ControllerBase
         }
         var client = _httpClientFactory.CreateClient();
         client.DefaultRequestHeaders.Add("User-Agent", USER_AGENT);
+        var accessToken = _stateManager.GetStateValue("accessToken");
+        client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
+        Console.WriteLine($"accessToken: {accessToken}");
         var lastId = _stateManager.GetStateValue("lastId");
         var after = !string.IsNullOrEmpty(lastId) ? $"&after={lastId}" : "";
         var response = await client.GetAsync($"https://www.reddit.com/r/{subreddit}/new.json?limit=100{after}");
