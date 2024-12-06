@@ -38,9 +38,10 @@ public class StatsController : ControllerBase
         var accessToken = _stateManager.GetStateValue("accessToken");
         request.Headers.Add("Authorization", $"Bearer {accessToken}");
         
+        Console.WriteLine($"{request.Method} {request.RequestUri}");
         foreach (var header in request.Headers)
         {
-            Console.WriteLine($"{header.Key}: {header.Value}");
+            Console.WriteLine($"{header.Key}: {string.Join(" ", header.Value)}");
         }
 
         var response = await client.SendAsync(request);
