@@ -29,9 +29,7 @@ public class StatsController : ControllerBase
             _repository.ClearPosts();
         }
         var client = _httpClientFactory.CreateClient();
-        // var accessToken = _stateManager.GetStateValue("accessToken");
         client.DefaultRequestHeaders.Add("User-Agent", USER_AGENT);
-        // client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
         var lastId = _stateManager.GetStateValue("lastId");
         var after = !string.IsNullOrEmpty(lastId) ? $"&after={lastId}" : "";
         var response = await client.GetAsync($"https://www.reddit.com/r/{subreddit}/new.json?limit=100{after}");

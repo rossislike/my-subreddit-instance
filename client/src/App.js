@@ -20,7 +20,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <main className="container mx-auto px-4 py-8">
-        <RedditAuth />
+        {!username && <RedditAuth />}
         {username && (
           <>
             <h2>

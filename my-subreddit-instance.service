@@ -16,7 +16,7 @@ Environment=CLIENT_ID=Qk_euOdX0E7h4XmQXRWwhA
 Environment=CLIENT_SECRET=aL4M-byXiRGWBNQAiUylEAgFxG_kuw
 Environment=REDIRECT_URI=http://Reddit-LB-104881215.us-east-1.elb.amazonaws.com/api/auth/reddit_callback
 Environment=USER_AGENT="SubrebbitJack by Alternative_Ruin360"
-Environment=SITE_URL=http://rumo-reddit-site.s3-website-us-east-1.amazonaws.com/
+Environment=SITE_URL=http://localhost/
 
 [Install]
 WantedBy=multi-user.target
