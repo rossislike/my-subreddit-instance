@@ -28,19 +28,22 @@ public class StatsController : ControllerBase
             _repository.ClearPosts();
         }
         var client = _httpClientFactory.CreateClient();
-        client.DefaultRequestHeaders.Add("User-Agent", USER_AGENT);
-        var accessToken = _stateManager.GetStateValue("accessToken");
-        client.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
-        
-        foreach (var header in client.DefaultRequestHeaders)
-        {
-            Console.WriteLine($"{header.Key}: {header.Value}");
-        }
 
         var lastId = _stateManager.GetStateValue("lastId");
         var after = !string.IsNullOrEmpty(lastId) ? $"&after={lastId}" : string.Empty;
 
-        var response = await client.GetAsync($"https://oauth.reddit.com/r/{subreddit}/new.json?limit=100{after}");
+        var request = new HttpRequestMessage(HttpMethod.Get, $"https://oauth.reddit.com/r/{subreddit}/new.json?limit=100{after}");
+        request.Headers.Add("User-Agent", USER_AGENT);
+        
+        var accessToken = _stateManager.GetStateValue("accessToken");
+        request.Headers.Add("Authorization", $"Bearer {accessToken}");
+        
+        foreach (var header in request.Headers)
+        {
+            Console.WriteLine($"{header.Key}: {header.Value}");
+        }
+
+        var response = await client.SendAsync(request);
         response.EnsureSuccessStatusCode();
 
         var json = await response.Content.ReadAsStringAsync();
