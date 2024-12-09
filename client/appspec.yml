@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /client/build/
-    destination: /usr/share/nginx/html
+    destination: /staging/my-subreddit-instance-fe
     pattern: "**"
 
 hooks:

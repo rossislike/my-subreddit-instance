@@ -18,7 +18,7 @@ phases:
   post_build:
     commands:
       - ls -la build
-      - zip -r my-subreddit-instance.zip appspec.yml my-subreddit-instance.conf my-subreddit-instance.service scripts/ build/
+      - zip -r my-subreddit-instance.zip appspec.yml nginx.conf my-subreddit-instance.service scripts/ build/
 
 artifacts:
   files:

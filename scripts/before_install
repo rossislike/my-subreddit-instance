@@ -2,3 +2,7 @@
 
 echo "before install"
 yum install aspnetcore-runtime-8.0 -y
+yum install nginx -y
+
+cd /etc/nginx
+mv nginx.conf nginx.conf.bak

@@ -2,4 +2,4 @@
 
 echo "before install"
 
-mv /usr/share/nginx/html/index.html /usr/share/nginx/html/index.html.bak
+# mv /usr/share/nginx/html/index.html /usr/share/nginx/html/index.html.bak
