@@ -36,7 +36,7 @@ public class StatsController : ControllerBase
         request.Headers.Add("User-Agent", USER_AGENT);
         
         var accessToken = _stateManager.GetStateValue("accessToken");
-        request.Headers.Add("Authorization", $"Bearer {accessToken}");
+        request.Headers.Add("bearer", accessToken);
         
         Console.WriteLine($"{request.Method} {request.RequestUri}");
         foreach (var header in request.Headers)
